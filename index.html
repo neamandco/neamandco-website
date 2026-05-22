@@ -985,6 +985,152 @@ footer{
   .footer-nav{flex-direction:column;gap:24px}
 }
 
+/* ══════════════════════════════════════════
+   BENTO SVG ICONS
+══════════════════════════════════════════ */
+.bento-value .v-icon{
+  width:24px;height:24px;
+  margin-bottom:14px;
+  color:var(--gold);
+}
+.bento-value .v-icon svg{
+  width:100%;height:100%;
+  stroke:currentColor;fill:none;
+  stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
+}
+
+/* ══════════════════════════════════════════
+   FOUNDER'S NOTE
+══════════════════════════════════════════ */
+.founder-note{
+  background:var(--green-dark);
+  position:relative;overflow:hidden;
+}
+.founder-note::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 65% 55% at 28% 60%,rgba(184,150,46,.07) 0%,transparent 60%);
+  pointer-events:none;
+}
+.founder-note-inner{
+  max-width:760px;margin:0 auto;
+  position:relative;z-index:2;
+}
+.founder-blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,2.8vw,33px);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.88);
+  line-height:1.72;
+  margin-bottom:42px;
+}
+.founder-blockquote em{color:var(--gold);font-style:normal}
+.founder-sig{display:flex;align-items:center;gap:18px}
+.founder-avatar{
+  width:52px;height:52px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(184,150,46,.25) 0%,rgba(184,150,46,.06) 100%);
+  border:1px solid rgba(184,150,46,.28);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:600;color:var(--gold);
+}
+.founder-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;font-weight:400;color:var(--white);letter-spacing:.04em;
+}
+.founder-title-label{
+  font-size:9px;font-weight:300;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:3px;
+}
+
+/* ══════════════════════════════════════════
+   WAITLIST
+══════════════════════════════════════════ */
+.waitlist{
+  background:var(--bg);
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.waitlist-inner{
+  max-width:560px;margin:0 auto;text-align:center;
+}
+.waitlist .section-label{
+  justify-content:center;
+}
+.waitlist .section-label::after{display:none}
+.waitlist-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(30px,4.5vw,50px);font-weight:300;
+  color:var(--white);margin-bottom:18px;line-height:1.1;
+}
+.waitlist-title em{color:var(--gold);font-style:italic}
+.waitlist-body{
+  font-size:15px;font-weight:300;
+  color:rgba(255,255,255,.42);
+  line-height:1.95;margin-bottom:40px;
+}
+.waitlist-form{
+  display:flex;gap:0;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:2px;overflow:hidden;
+  max-width:460px;margin:0 auto;
+  transition:border-color .25s;
+}
+.waitlist-form:focus-within{border-color:rgba(184,150,46,.4)}
+.waitlist-input{
+  flex:1;padding:15px 20px;
+  background:rgba(255,255,255,.04);
+  border:none;outline:none;
+  font-family:'Jost',sans-serif;font-size:14px;font-weight:300;
+  color:var(--white);
+}
+.waitlist-input::placeholder{color:rgba(255,255,255,.22)}
+.waitlist-btn{
+  padding:15px 28px;background:var(--gold);
+  color:var(--onyx);border:none;
+  font-family:'Jost',sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  cursor:pointer;white-space:nowrap;
+  transition:background .25s;
+}
+.waitlist-btn:hover{background:var(--gold-light)}
+.waitlist-note{
+  font-size:11px;font-weight:300;letter-spacing:.06em;
+  color:rgba(255,255,255,.18);margin-top:14px;
+}
+.waitlist-success{
+  display:none;
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:300;font-style:italic;
+  color:var(--gold);margin-top:24px;
+}
+@media(max-width:480px){
+  .waitlist-form{flex-direction:column}
+  .waitlist-btn{padding:14px}
+}
+
+/* ══════════════════════════════════════════
+   FOOTER SOCIAL
+══════════════════════════════════════════ */
+.footer-social{
+  display:flex;gap:10px;margin-top:18px;
+}
+.footer-social a{
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:all .25s;
+}
+.footer-social a:hover{
+  background:rgba(184,150,46,.14);
+  border-color:rgba(184,150,46,.3);
+}
+.footer-social a svg{
+  width:14px;height:14px;
+  fill:rgba(255,255,255,.38);
+  transition:fill .25s;
+}
+.footer-social a:hover svg{fill:var(--gold)}
+
 </style>
 </head>
 <body>
@@ -1035,8 +1181,8 @@ footer{
   <div class="orb orb-3" aria-hidden="true"></div>
 
   <!-- Africa silhouette background -->
-  <svg class="africa-bg" aria-hidden="true" viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 160 18 C 185 12 215 10 238 20 C 261 30 274 52 280 74 C 286 96 282 120 288 142 C 294 162 308 178 308 198 C 308 218 294 234 290 254 C 286 274 292 296 284 315 C 276 334 258 346 246 363 C 234 380 227 400 212 414 C 197 428 178 435 162 440 C 146 445 130 444 116 438 C 102 432 90 420 80 408 C 70 396 62 382 54 368 C 46 354 38 339 36 324 C 34 309 42 294 40 279 C 38 264 28 250 30 235 C 32 220 46 209 48 194 C 50 179 40 164 44 149 C 48 134 64 124 68 109 C 72 94 62 78 70 64 C 78 50 98 44 114 36 C 130 28 143 22 160 18 Z"/>
+  <svg class="africa-bg" aria-hidden="true" viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 72,26 C 104,14 134,9 164,12 C 188,14 210,20 226,28 C 238,35 244,50 246,66 C 248,84 250,102 255,118 C 259,130 262,140 258,151 C 253,163 240,174 226,188 C 209,204 190,220 168,238 C 145,257 120,278 106,300 C 99,312 100,328 108,338 C 101,334 84,322 66,305 C 47,286 36,262 27,237 C 18,210 17,182 20,155 C 23,128 32,103 34,78 L 22,61 C 28,45 44,30 60,22 C 64,20 68,22 72,26 Z"/>
   </svg>
 
   <div class="hero-content">
@@ -1105,9 +1251,9 @@ footer{
       <span class="stat-desc" data-en="Founded" data-fr="Fondée">Founded</span>
     </div>
     <div class="stat-block reveal">
-      <span class="stat-num"><em>1</em>+</span>
+      <span class="stat-num"><em>1</em></span>
       <div class="stat-divider"></div>
-      <span class="stat-desc" data-en="Products Live" data-fr="Produits Actifs">Products Live</span>
+      <span class="stat-desc" data-en="Product Launching" data-fr="Produit en Lancement">Product Launching</span>
     </div>
     <div class="stat-block reveal">
       <span class="stat-num"><em>54</em></span>
@@ -1195,22 +1341,22 @@ footer{
 
         <!-- 4 value cards -->
         <div class="bento-card bento-value">
-          <div class="v-icon">✦</div>
+          <div class="v-icon"><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg></div>
           <div class="v-name" data-en="Excellence" data-fr="Excellence">Excellence</div>
           <div class="v-desc" data-en="The highest standard in everything we build and every relationship we cultivate." data-fr="Le plus haut standard dans tout ce que nous construisons.">The highest standard in everything we build and every relationship we cultivate.</div>
         </div>
         <div class="bento-card bento-value">
-          <div class="v-icon">⬡</div>
+          <div class="v-icon"><svg viewBox="0 0 24 24"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg></div>
           <div class="v-name" data-en="Integrity" data-fr="Intégrité">Integrity</div>
           <div class="v-desc" data-en="Honesty and transparency — with our partners, users, and ourselves." data-fr="Honnêteté et transparence — avec nos partenaires et utilisateurs.">Honesty and transparency — with our partners, users, and ourselves.</div>
         </div>
         <div class="bento-card bento-value">
-          <div class="v-icon">◎</div>
+          <div class="v-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
           <div class="v-name" data-en="Purpose" data-fr="Finalité">Purpose</div>
           <div class="v-desc" data-en="Every product driven by a deeper mission — to improve lives across Africa." data-fr="Chaque produit animé par une mission : améliorer des vies en Afrique.">Every product driven by a deeper mission — to improve lives across Africa.</div>
         </div>
         <div class="bento-card bento-value">
-          <div class="v-icon">❋</div>
+          <div class="v-icon"><svg viewBox="0 0 24 24"><path d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg></div>
           <div class="v-name" data-en="Impact" data-fr="Impact">Impact</div>
           <div class="v-desc" data-en="Success measured in lives touched and communities lifted, not only revenue." data-fr="Le succès mesuré par les vies touchées et les communautés élevées.">Success measured in lives touched and communities lifted, not only revenue.</div>
         </div>
@@ -1253,6 +1399,28 @@ footer{
           >&ldquo;We don&rsquo;t build for money. We build to improve lives and help people tap into their calling.&rdquo;</span>
           <cite data-en="— NÉAM &amp; CO, Founding Principle" data-fr="— NÉAM &amp; CO, Principe Fondateur">— NÉAM &amp; CO, Founding Principle</cite>
         </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOUNDER'S NOTE ════════════════ -->
+<section class="founder-note" aria-label="From the founder">
+  <div class="container">
+    <div class="founder-note-inner reveal">
+      <p class="section-label" data-en="From the Founder" data-fr="Du Fondateur">From the Founder</p>
+      <blockquote class="founder-blockquote">
+        <span
+          data-en="&ldquo;We didn&rsquo;t start NÉAM &amp; CO because we saw a market opportunity. We started it because <em>we needed it to exist</em> — and we were tired of waiting for someone else to build it.&rdquo;"
+          data-fr="&laquo;&nbsp;Nous n&rsquo;avons pas créé NÉAM &amp; CO parce que nous avons vu une opportunité. Nous l&rsquo;avons créé parce que <em>nous en avions besoin</em> — et nous étions fatigués d&rsquo;attendre que quelqu&rsquo;un d&rsquo;autre le fasse.&nbsp;&raquo;"
+        >&ldquo;We didn&rsquo;t start NÉAM &amp; CO because we saw a market opportunity. We started it because <em>we needed it to exist</em> — and we were tired of waiting for someone else to build it.&rdquo;</span>
+      </blockquote>
+      <div class="founder-sig">
+        <div class="founder-avatar">M</div>
+        <div>
+          <div class="founder-name">Macaire N.</div>
+          <div class="founder-title-label" data-en="Founder &amp; CEO, NÉAM &amp; CO SARL" data-fr="Fondateur &amp; CEO, NÉAM &amp; CO SARL">Founder &amp; CEO, NÉAM &amp; CO SARL</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1348,6 +1516,32 @@ footer{
   </div>
 </section>
 
+<!-- ════════════════ WAITLIST ════════════════ -->
+<section class="waitlist" id="waitlist">
+  <div class="container">
+    <div class="waitlist-inner reveal">
+      <p class="section-label" data-en="Early Access" data-fr="Accès Anticipé">Early Access</p>
+      <h2 class="waitlist-title"
+          data-en="Be first when <em>My Helper</em> launches"
+          data-fr="Soyez le premier au lancement de <em>My Helper</em>"
+      >Be first when <em>My Helper</em> launches</h2>
+      <p class="waitlist-body"
+         data-en="Leave your email and we&rsquo;ll reach out when it&rsquo;s ready — one message, no newsletters."
+         data-fr="Laissez votre e-mail et nous vous contacterons au lancement — un seul message, pas de newsletter."
+      >Leave your email and we&rsquo;ll reach out when it&rsquo;s ready — one message, no newsletters.</p>
+      <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+        <input type="email" class="waitlist-input" placeholder="your@email.com"
+               required aria-label="Your email address">
+        <button type="submit" class="waitlist-btn" data-en="Notify Me" data-fr="Me Notifier">Notify Me</button>
+      </form>
+      <p class="waitlist-note" data-en="No spam. Unsubscribe anytime." data-fr="Pas de spam. Désinscription à tout moment.">No spam. Unsubscribe anytime.</p>
+      <p class="waitlist-success" id="waitlistSuccess"
+         data-en="You&rsquo;re on the list. We&rsquo;ll be in touch."
+         data-fr="Vous êtes sur la liste. Nous vous contacterons."></p>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════ CONTACT ════════════════ -->
 <section class="contact" id="contact" aria-label="Contact us">
   <div class="container">
@@ -1398,8 +1592,8 @@ footer{
       <div class="reveal">
         <div class="contact-card">
           <div class="contact-card-bar"></div>
-          <svg class="africa-contact" aria-hidden="true" viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-            <path d="M 160 18 C 185 12 215 10 238 20 C 261 30 274 52 280 74 C 286 96 282 120 288 142 C 294 162 308 178 308 198 C 308 218 294 234 290 254 C 286 274 292 296 284 315 C 276 334 258 346 246 363 C 234 380 227 400 212 414 C 197 428 178 435 162 440 C 146 445 130 444 116 438 C 102 432 90 420 80 408 C 70 396 62 382 54 368 C 46 354 38 339 36 324 C 34 309 42 294 40 279 C 38 264 28 250 30 235 C 32 220 46 209 48 194 C 50 179 40 164 44 149 C 48 134 64 124 68 109 C 72 94 62 78 70 64 C 78 50 98 44 114 36 C 130 28 143 22 160 18 Z"/>
+          <svg class="africa-contact" aria-hidden="true" viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path d="M 72,26 C 104,14 134,9 164,12 C 188,14 210,20 226,28 C 238,35 244,50 246,66 C 248,84 250,102 255,118 C 259,130 262,140 258,151 C 253,163 240,174 226,188 C 209,204 190,220 168,238 C 145,257 120,278 106,300 C 99,312 100,328 108,338 C 101,334 84,322 66,305 C 47,286 36,262 27,237 C 18,210 17,182 20,155 C 23,128 32,103 34,78 L 22,61 C 28,45 44,30 60,22 C 64,20 68,22 72,26 Z"/>
           </svg>
           <div class="contact-city" data-en="Africa" data-fr="Afrique">Africa</div>
           <div class="contact-region" data-en="54 Nations · 1.4 Billion People" data-fr="54 Nations · 1,4 Milliard de Personnes">54 Nations · 1.4 Billion People</div>
@@ -1425,6 +1619,11 @@ footer{
          data-en="A small team with a large ambition. We build software for Africa, by Africans — starting now."
          data-fr="Une petite équipe avec une grande ambition. Nous construisons des logiciels pour l'Afrique, par des Africains — dès maintenant."
       >A small team with a large ambition. We build software for Africa, by Africans — starting now.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/neamandco" target="_blank" rel="noopener noreferrer" aria-label="NÉAM &amp; CO on LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="footer-nav" role="navigation" aria-label="Footer navigation">
@@ -1479,7 +1678,7 @@ function setLang(l) {
     const t = el.getAttribute('data-' + l);
     if (!t) return;
     const tag = el.tagName;
-    if (tag === 'H1' || tag === 'H2' || tag === 'H3' || tag === 'P' || tag === 'SPAN') {
+    if (['H1','H2','H3','P','SPAN','BLOCKQUOTE','LI'].includes(tag)) {
       el.innerHTML = t;
     } else {
       el.textContent = t;
@@ -1534,6 +1733,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// ── Waitlist form ──────────────────────────
+function handleWaitlist(e) {
+  e.preventDefault();
+  const success = document.getElementById('waitlistSuccess');
+  const t = success.getAttribute('data-' + lang) || success.getAttribute('data-en');
+  success.innerHTML = t;
+  success.style.display = 'block';
+  e.target.style.display = 'none';
+  document.querySelector('.waitlist-note').style.display = 'none';
+}
 </script>
 
 </body>
