@@ -82,8 +82,13 @@ nav.scrolled{
   -webkit-backdrop-filter:blur(20px);
   box-shadow:0 1px 0 rgba(184,150,46,.12);
 }
-.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
-.nav-logo img{height:40px;object-fit:contain}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-logo-icon{
+  width:32px;height:32px;border-radius:50%;
+  overflow:hidden;background:#fff;flex-shrink:0;
+  border:1.5px solid rgba(184,150,46,.35);
+}
+.nav-logo-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .nav-logo-text{
   font-family:'Cormorant Garamond',serif;
   font-size:19px;font-weight:600;
@@ -205,12 +210,21 @@ nav.scrolled{
 
 /* Hero content */
 .hero-content{position:relative;z-index:2;max-width:900px}
-.hero-logo{
-  width:100px;height:100px;object-fit:contain;
-  margin-bottom:40px;
+/* Hero logo medallion */
+.hero-logo-ring{
+  width:120px;height:120px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(184,150,46,.55) 0%,rgba(184,150,46,.12) 100%);
+  padding:2.5px;margin:0 auto 40px;
   animation:fadeUp .9s ease both;
-  filter:drop-shadow(0 4px 32px rgba(184,150,46,.2));
+  box-shadow:0 0 100px rgba(184,150,46,.13), 0 28px 72px rgba(0,0,0,.5);
 }
+.hero-logo-circle{
+  width:100%;height:100%;border-radius:50%;
+  background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-logo-circle img{width:80%;height:80%;object-fit:contain;display:block}
 .hero-eyebrow{
   font-size:10px;font-weight:400;letter-spacing:.36em;
   text-transform:uppercase;color:var(--gold);
@@ -978,11 +992,10 @@ footer{
 <!-- ════════════════ NAV ════════════════ -->
 <nav id="navbar" aria-label="Main navigation">
   <a href="#home" class="nav-logo" aria-label="NÉAM &amp; CO — Home">
-    <img
-      src="assets/logo-horizontal.png"
-      alt="NÉAM &amp; CO"
-      onerror="this.outerHTML='<span class=\'nav-logo-text\'>NÉAM &amp; CO</span>'"
-    >
+    <div class="nav-logo-icon">
+      <img src="logo.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+    <span class="nav-logo-text">NÉAM &amp; CO</span>
   </a>
   <ul class="nav-links" role="list">
     <li><a href="#about"    data-en="About"    data-fr="À propos">About</a></li>
@@ -1009,7 +1022,7 @@ footer{
     <li><a href="#mission"  onclick="closeMenu()" data-en="Mission"        data-fr="Mission">Mission</a></li>
     <li><a href="#products" onclick="closeMenu()" data-en="Products"       data-fr="Produits">Products</a></li>
     <li><a href="#contact"  onclick="closeMenu()" data-en="Contact"        data-fr="Contact">Contact</a></li>
-    <li><a href="#privacy"  onclick="closeMenu()" data-en="Privacy Policy" data-fr="Confidentialité">Privacy Policy</a></li>
+    <li><a href="privacy.html" data-en="Privacy Policy" data-fr="Confidentialité">Privacy Policy</a></li>
   </ul>
 </nav>
 
@@ -1027,12 +1040,11 @@ footer{
   </svg>
 
   <div class="hero-content">
-    <img
-      src="logo.png"
-      alt="NÉAM &amp; CO"
-      class="hero-logo"
-      onerror="this.style.display='none'"
-    >
+    <div class="hero-logo-ring">
+      <div class="hero-logo-circle">
+        <img src="logo.png" alt="NÉAM &amp; CO" onerror="this.style.display='none'">
+      </div>
+    </div>
     <p class="hero-eyebrow"
        data-en="Pan-African Technology Studio · Est. 2026"
        data-fr="Studio Technologique Pan-Africain · Fondé en 2026"
@@ -1045,9 +1057,9 @@ footer{
     </p>
 
     <p class="hero-desc"
-       data-en="We build purposeful digital solutions that connect people, empower communities, and create lasting impact across Africa's 54 nations."
-       data-fr="Nous construisons des solutions numériques qui connectent les personnes, autonomisent les communautés et créent un impact durable à travers les 54 nations d'Afrique."
-    >We build purposeful digital solutions that connect people, empower communities, and create lasting impact across Africa's 54 nations.</p>
+       data-en="We build software people actually use — things that make everyday life a little easier, a little fairer, across every corner of Africa."
+       data-fr="Nous construisons des logiciels que les gens utilisent vraiment — des outils qui rendent la vie quotidienne un peu plus simple, un peu plus juste, à travers toute l'Afrique."
+    >We build software people actually use — things that make everyday life a little easier, a little fairer, across every corner of Africa.</p>
 
     <div class="hero-cta">
       <a href="#products" class="btn-gold"  data-en="Explore Our Work"  data-fr="Découvrir Nos Projets">Explore Our Work</a>
@@ -1124,9 +1136,9 @@ footer{
         >Built in Africa, <em>for Africa</em></h2>
         <div class="gold-rule"></div>
         <p class="section-body"
-           data-en="NÉAM &amp; CO SARL is a Pan-African technology venture studio — designing, building, and scaling digital platforms that solve real problems for real people across the continent. We operate with excellence, integrity, and purpose at the core of everything we create."
-           data-fr="NÉAM &amp; CO SARL est un studio technologique pan-africain — concevant, construisant et déployant des plateformes numériques qui résolvent de vrais problèmes pour de vraies personnes à travers le continent, avec excellence, intégrité et finalité."
-        >NÉAM &amp; CO SARL is a Pan-African technology venture studio — designing, building, and scaling digital platforms that solve real problems for real people across the continent. We operate with excellence, integrity, and purpose at the core of everything we create.</p>
+           data-en="NÉAM &amp; CO started with a simple question: why don't the tools we use every day actually work for us? We're a small, focused team building digital products that fit how people in Africa live and work — not how Silicon Valley imagines they do."
+           data-fr="NÉAM &amp; CO est né d'une question simple : pourquoi les outils du quotidien ne fonctionnent-ils pas vraiment pour nous ? Nous sommes une petite équipe qui construit des produits numériques adaptés à la façon dont les Africains vivent et travaillent réellement."
+        >NÉAM &amp; CO started with a simple question: why don't the tools we use every day actually work for us? We're a small, focused team building digital products that fit how people in Africa live and work — not how Silicon Valley imagines they do.</p>
 
         <div class="about-stats-row reveal">
           <div class="about-stat">
@@ -1229,9 +1241,9 @@ footer{
         >Technology that <em>serves people</em>, not the other way around</h2>
         <div class="gold-rule"></div>
         <p class="section-body"
-           data-en="Africa is not waiting — it is building. We believe the digital revolution should reach every corner of the continent, not just the well-connected. Our mission is to build platforms that are accessible, trustworthy, and genuinely transformative for everyday people."
-           data-fr="L'Afrique n'attend pas — elle construit. Nous croyons que la révolution numérique doit atteindre chaque coin du continent. Notre mission est de construire des plateformes accessibles, fiables et véritablement transformatrices pour les gens ordinaires."
-        >Africa is not waiting — it is building. We believe the digital revolution should reach every corner of the continent, not just the well-connected. Our mission is to build platforms that are accessible, trustworthy, and genuinely transformative for everyday people.</p>
+           data-en="We started this because we were tired of watching useful technology stop at borders, stop at income brackets, stop short of the people who need it most. Africa isn't behind — it's been underserved. We're here to fix that, one product at a time."
+           data-fr="Nous avons commencé parce que nous en avions assez de voir la technologie utile s'arrêter aux frontières, aux niveaux de revenus, loin des gens qui en ont le plus besoin. L'Afrique n'est pas en retard — elle a été mal servie. Nous sommes là pour changer ça."
+        >We started this because we were tired of watching useful technology stop at borders, stop at income brackets, stop short of the people who need it most. Africa isn't behind — it's been underserved. We're here to fix that, one product at a time.</p>
       </div>
       <div class="reveal">
         <blockquote class="mission-quote">
@@ -1257,9 +1269,9 @@ footer{
       >Purposeful <em>products</em> for everyday life</h2>
       <div class="gold-rule"></div>
       <p class="section-body"
-         data-en="Every product under the NÉAM &amp; CO umbrella is built to solve a real problem with care, craft, and the people of Africa in mind."
-         data-fr="Chaque produit sous l'égide de NÉAM &amp; CO est conçu pour résoudre un vrai problème avec soin, qualité et les populations africaines en tête."
-      >Every product under the NÉAM &amp; CO umbrella is built to solve a real problem with care, craft, and the people of Africa in mind.</p>
+         data-en="We don't chase trends. Every product we ship has to earn its place — does it make something genuinely better for someone who actually needs it?"
+         data-fr="Nous ne suivons pas les tendances. Chaque produit que nous lançons doit mériter sa place — est-ce qu'il améliore vraiment quelque chose pour quelqu'un qui en a besoin ?"
+      >We don't chase trends. Every product we ship has to earn its place — does it make something genuinely better for someone who actually needs it?</p>
     </div>
 
     <div class="products-grid">
@@ -1281,9 +1293,9 @@ footer{
         </div>
         <div class="product-body">
           <p class="product-desc"
-             data-en="My Helper connects households and businesses with trusted, vetted service workers — cleaners, handymen, caregivers, and more. Fast, reliable, and safe."
-             data-fr="My Helper connecte les ménages et entreprises avec des prestataires de services fiables et vérifiés — agents d'entretien, techniciens, aides-soignants et plus encore."
-          >My Helper connects households and businesses with trusted, vetted service workers — cleaners, handymen, caregivers, and more. Fast, reliable, and safe.</p>
+             data-en="Finding a reliable plumber or cleaner shouldn't take three days of calls through a friend of a friend. My Helper makes that simple — book a vetted, reviewed professional in minutes."
+             data-fr="Trouver un plombier ou un agent d'entretien fiable ne devrait pas prendre trois jours d'appels via un ami d'un ami. My Helper rend ça simple — réservez un professionnel vérifié en quelques minutes."
+          >Finding a reliable plumber or cleaner shouldn't take three days of calls through a friend of a friend. My Helper makes that simple — book a vetted, reviewed professional in minutes.</p>
           <ul class="product-features">
             <li data-en="On-demand home service booking"       data-fr="Réservation de services à domicile à la demande">On-demand home service booking</li>
             <li data-en="Verified and rated service providers" data-fr="Prestataires vérifiés et évalués">Verified and rated service providers</li>
@@ -1318,9 +1330,9 @@ footer{
         </div>
         <div class="product-body">
           <p class="product-desc"
-             data-en="NÉAM &amp; CO is actively building new digital solutions for the African market across key verticals. Stay connected for upcoming announcements."
-             data-fr="NÉAM &amp; CO développe activement de nouvelles solutions numériques pour le marché africain. Restez connectés pour les prochaines annonces."
-          >NÉAM &amp; CO is actively building new digital solutions for the African market across key verticals. Stay connected for upcoming announcements.</p>
+             data-en="We have a few things in the works we're not quite ready to talk about yet. Drop us your email and you'll be among the first to know when we launch."
+             data-fr="Nous avons quelques projets en cours dont nous ne sommes pas encore prêts à parler. Laissez-nous votre e-mail et vous serez parmi les premiers à le savoir à notre lancement."
+          >We have a few things in the works we're not quite ready to talk about yet. Drop us your email and you'll be among the first to know when we launch.</p>
           <ul class="product-features">
             <li data-en="Education technology"                    data-fr="Technologie éducative">Education technology</li>
             <li data-en="Digital payments infrastructure"         data-fr="Infrastructure de paiement numérique">Digital payments infrastructure</li>
@@ -1348,9 +1360,9 @@ footer{
         >Let's <em>build</em> something together</h2>
         <div class="gold-rule"></div>
         <p class="section-body"
-           data-en="Whether you're a potential partner, investor, or simply want to learn more about what we're building — we'd love to hear from you."
-           data-fr="Que vous soyez un partenaire potentiel, un investisseur ou que vous souhaitiez simplement en savoir plus — nous serions ravis de vous entendre."
-        >Whether you're a potential partner, investor, or simply want to learn more about what we're building — we'd love to hear from you.</p>
+           data-en="We're a small team and we read every message. Whether you want to partner, invest, or just tell us about a problem you wish someone would solve — reach out."
+           data-fr="Nous sommes une petite équipe et nous lisons chaque message. Que vous souhaitiez collaborer, investir, ou simplement nous parler d'un problème que vous aimeriez voir résolu — écrivez-nous."
+        >We're a small team and we read every message. Whether you want to partner, invest, or just tell us about a problem you wish someone would solve — reach out.</p>
 
         <div class="contact-list">
           <div class="contact-row">
@@ -1398,82 +1410,6 @@ footer{
   </div>
 </section>
 
-<!-- ════════════════ PRIVACY ════════════════ -->
-<section class="privacy" id="privacy" aria-label="Privacy policy">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label" data-en="Legal" data-fr="Légal">Legal</p>
-      <h2 class="section-title"
-          data-en="Privacy <em>Policy</em>"
-          data-fr="Politique de <em>Confidentialité</em>"
-      >Privacy <em>Policy</em></h2>
-      <p class="privacy-date"
-         data-en="Last updated: May 2026"
-         data-fr="Dernière mise à jour : Mai 2026">Last updated: May 2026</p>
-      <p class="privacy-intro"
-         data-en="NÉAM &amp; CO SARL (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard data gathered through neamandco.com and our mobile application My Helper, available on iOS and Android."
-         data-fr="NÉAM &amp; CO SARL s'engage à protéger vos informations personnelles. Cette politique explique comment nous collectons, utilisons et protégeons les données recueillies via neamandco.com et notre application mobile My Helper, disponible sur iOS et Android."
-      >NÉAM &amp; CO SARL (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard data gathered through neamandco.com and our mobile application My Helper, available on iOS and Android.</p>
-    </div>
-
-    <div class="privacy-rule"></div>
-
-    <div class="privacy-block reveal">
-      <h3 data-en="1. Information We Collect" data-fr="1. Informations Collectées">1. Information We Collect</h3>
-      <p data-en="We may collect the following personal information:" data-fr="Nous pouvons collecter les informations personnelles suivantes :">We may collect the following personal information:</p>
-      <ul>
-        <li data-en="Identity: full name, username, profile photo." data-fr="Identité : nom complet, nom d'utilisateur, photo de profil.">Identity: full name, username, profile photo.</li>
-        <li data-en="Contact: email address, phone number." data-fr="Contact : adresse e-mail, numéro de téléphone.">Contact: email address, phone number.</li>
-        <li data-en="Location: precise GPS (with consent) to match you with nearby service providers." data-fr="Localisation : GPS précis (avec consentement) pour vous connecter aux prestataires proches.">Location: precise GPS (with consent) to match you with nearby service providers.</li>
-        <li data-en="Transactions: bookings, payment history, ratings." data-fr="Transactions : réservations, historique des paiements, évaluations.">Transactions: bookings, payment history, ratings.</li>
-        <li data-en="Technical: device type, OS, IP address, app usage." data-fr="Technique : type d'appareil, OS, adresse IP, données d'utilisation.">Technical: device type, OS, IP address, app usage.</li>
-        <li data-en="Communications: messages via in-app support or email." data-fr="Communications : messages via le support in-app ou e-mail.">Communications: messages via in-app support or email.</li>
-      </ul>
-    </div>
-    <div class="privacy-block reveal">
-      <h3 data-en="2. How We Use Your Information" data-fr="2. Utilisation des Informations">2. How We Use Your Information</h3>
-      <ul>
-        <li data-en="Create and manage your account." data-fr="Créer et gérer votre compte.">Create and manage your account.</li>
-        <li data-en="Connect you with qualified service providers." data-fr="Vous connecter avec des prestataires qualifiés.">Connect you with qualified service providers.</li>
-        <li data-en="Process bookings and payments." data-fr="Traiter les réservations et les paiements.">Process bookings and payments.</li>
-        <li data-en="Improve our platform through usage analytics." data-fr="Améliorer notre plateforme via l'analyse d'utilisation.">Improve our platform through usage analytics.</li>
-        <li data-en="Send service notifications (with consent)." data-fr="Envoyer des notifications (avec consentement).">Send service notifications (with consent).</li>
-        <li data-en="Comply with applicable law." data-fr="Se conformer à la loi applicable.">Comply with applicable law.</li>
-      </ul>
-    </div>
-    <div class="privacy-block reveal">
-      <h3 data-en="3. Data Sharing" data-fr="3. Partage des Données">3. Data Sharing</h3>
-      <p data-en="We do not sell your personal data. We may share with:" data-fr="Nous ne vendons pas vos données. Nous pouvons partager avec :">We do not sell your personal data. We may share with:</p>
-      <ul>
-        <li data-en="Service providers you book (limited to what is necessary)." data-fr="Les prestataires que vous réservez (limité au nécessaire).">Service providers you book (limited to what is necessary).</li>
-        <li data-en="Trusted technology partners (payment processors, cloud) under strict agreements." data-fr="Partenaires technologiques de confiance sous accords stricts.">Trusted technology partners (payment processors, cloud) under strict agreements.</li>
-        <li data-en="Regulatory or law enforcement authorities when required by law." data-fr="Les autorités réglementaires ou judiciaires lorsque la loi l'exige.">Regulatory or law enforcement authorities when required by law.</li>
-      </ul>
-    </div>
-    <div class="privacy-block reveal">
-      <h3 data-en="4. Cookies &amp; Tracking" data-fr="4. Cookies et Suivi">4. Cookies &amp; Tracking</h3>
-      <p data-en="Our website uses minimal cookies for essential functionality (language preferences, session state). No advertising cookies. Our mobile app does not use third-party advertising trackers." data-fr="Notre site utilise des cookies minimaux pour les fonctionnalités essentielles. Pas de cookies publicitaires. Notre application n'utilise pas de trackers publicitaires tiers.">Our website uses minimal cookies for essential functionality (language preferences, session state). No advertising cookies. Our mobile app does not use third-party advertising trackers.</p>
-    </div>
-    <div class="privacy-block reveal">
-      <h3 data-en="5. Data Retention" data-fr="5. Conservation des Données">5. Data Retention</h3>
-      <p data-en="We retain your data as long as your account is active. You may request deletion at any time by contacting us." data-fr="Nous conservons vos données aussi longtemps que votre compte est actif. Vous pouvez demander la suppression à tout moment en nous contactant.">We retain your data as long as your account is active. You may request deletion at any time by contacting us.</p>
-    </div>
-    <div class="privacy-block reveal">
-      <h3 data-en="6. Your Rights" data-fr="6. Vos Droits">6. Your Rights</h3>
-      <p data-en="You have the right to access, correct, or delete your personal data. Contact:" data-fr="Vous avez le droit d'accéder, corriger ou supprimer vos données. Contactez :">You have the right to access, correct, or delete your personal data. Contact:</p>
-      <p style="margin-top:10px"><a href="mailto:contact@neamandco.com" class="privacy-link">contact@neamandco.com</a></p>
-    </div>
-    <div class="privacy-block reveal">
-      <h3 data-en="7. Children's Privacy" data-fr="7. Confidentialité des Enfants">7. Children's Privacy</h3>
-      <p data-en="Our services are not directed to children under 16. We do not knowingly collect data from children. Contact us immediately if you believe a child has provided personal data." data-fr="Nos services ne sont pas destinés aux enfants de moins de 16 ans. Si vous pensez qu'un enfant nous a fourni des données, contactez-nous immédiatement.">Our services are not directed to children under 16. We do not knowingly collect data from children. Contact us immediately if you believe a child has provided personal data.</p>
-    </div>
-    <div class="privacy-block reveal">
-      <h3 data-en="8. Changes to This Policy" data-fr="8. Modifications">8. Changes to This Policy</h3>
-      <p data-en="We may update this policy periodically. Continued use of our services after changes constitutes acceptance." data-fr="Nous pouvons mettre à jour cette politique. L'utilisation continue de nos services après modification constitue une acceptation.">We may update this policy periodically. Continued use of our services after changes constitutes acceptance.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ════════════════ FOOTER ════════════════ -->
 <footer aria-label="Site footer">
   <div class="footer-main">
@@ -1486,12 +1422,12 @@ footer{
         </div>
       </div>
       <p class="footer-brand-desc"
-         data-en="Pan-African technology venture studio. Building digital solutions that connect people, empower communities, and create lasting impact."
-         data-fr="Studio technologique pan-africain. Nous construisons des solutions numériques qui connectent les personnes et créent un impact durable."
-      >Pan-African technology venture studio. Building digital solutions that connect people, empower communities, and create lasting impact.</p>
+         data-en="A small team with a large ambition. We build software for Africa, by Africans — starting now."
+         data-fr="Une petite équipe avec une grande ambition. Nous construisons des logiciels pour l'Afrique, par des Africains — dès maintenant."
+      >A small team with a large ambition. We build software for Africa, by Africans — starting now.</p>
     </div>
 
-    <nav class="footer-nav" aria-label="Footer navigation">
+    <div class="footer-nav" role="navigation" aria-label="Footer navigation">
       <div class="footer-nav-col">
         <h4 data-en="Company" data-fr="Société">Company</h4>
         <ul role="list">
@@ -1510,10 +1446,10 @@ footer{
       <div class="footer-nav-col">
         <h4 data-en="Legal" data-fr="Légal">Legal</h4>
         <ul role="list">
-          <li><a href="#privacy"  data-en="Privacy Policy" data-fr="Confidentialité">Privacy Policy</a></li>
+          <li><a href="privacy.html" data-en="Privacy Policy" data-fr="Confidentialité">Privacy Policy</a></li>
         </ul>
       </div>
-    </nav>
+    </div>
   </div>
 
   <div class="footer-bottom">
