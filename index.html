@@ -489,8 +489,9 @@ section{padding:108px 24px}
   margin-bottom:24px;position:relative;z-index:1;
 }
 .bento-seal{
-  width:72px;height:72px;object-fit:contain;flex-shrink:0;
-  filter:drop-shadow(0 2px 12px rgba(0,0,0,.3));
+  width:72px;height:72px;border-radius:50%;
+  object-fit:cover;flex-shrink:0;overflow:hidden;
+  box-shadow:0 0 0 2px rgba(184,150,46,.3), 0 4px 18px rgba(0,0,0,.3);
 }
 .bento-seal-fallback{
   width:72px;height:72px;border-radius:50%;
@@ -848,7 +849,11 @@ footer{
 }
 .footer-brand{max-width:280px}
 .footer-logo-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.footer-logo-img{height:36px;object-fit:contain}
+.footer-logo-img{
+  width:38px;height:38px;border-radius:50%;
+  object-fit:cover;overflow:hidden;
+  box-shadow:0 0 0 1.5px rgba(184,150,46,.25);
+}
 .footer-wordmark{
   font-family:'Cormorant Garamond',serif;
   font-size:17px;font-weight:600;color:var(--white);letter-spacing:.07em;
@@ -1181,8 +1186,8 @@ footer{
   <div class="orb orb-3" aria-hidden="true"></div>
 
   <!-- Africa silhouette background -->
-  <svg class="africa-bg" aria-hidden="true" viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 72,26 C 104,14 134,9 164,12 C 188,14 210,20 226,28 C 238,35 244,50 246,66 C 248,84 250,102 255,118 C 259,130 262,140 258,151 C 253,163 240,174 226,188 C 209,204 190,220 168,238 C 145,257 120,278 106,300 C 99,312 100,328 108,338 C 101,334 84,322 66,305 C 47,286 36,262 27,237 C 18,210 17,182 20,155 C 23,128 32,103 34,78 L 22,61 C 28,45 44,30 60,22 C 64,20 68,22 72,26 Z"/>
+  <svg class="africa-bg" aria-hidden="true" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 90,40 C 130,26 170,20 205,22 C 245,24 270,30 288,40 C 300,50 305,66 308,84 C 311,102 315,120 322,138 C 327,150 329,162 325,173 C 319,186 306,198 288,214 C 268,232 244,252 218,274 C 190,298 162,326 148,358 C 142,378 145,400 155,413 C 144,406 128,390 110,368 C 88,342 72,313 60,282 C 48,250 48,218 52,188 C 56,158 66,134 66,108 C 66,82 70,60 80,46 C 84,40 87,38 90,40 Z"/>
   </svg>
 
   <div class="hero-content">
@@ -1203,9 +1208,9 @@ footer{
     </p>
 
     <p class="hero-desc"
-       data-en="We build software people actually use — things that make everyday life a little easier, a little fairer, across every corner of Africa."
-       data-fr="Nous construisons des logiciels que les gens utilisent vraiment — des outils qui rendent la vie quotidienne un peu plus simple, un peu plus juste, à travers toute l'Afrique."
-    >We build software people actually use — things that make everyday life a little easier, a little fairer, across every corner of Africa.</p>
+       data-en="We build software people actually use — tools that make daily life simpler, fairer, and more connected across every corner of Africa."
+       data-fr="Nous construisons des logiciels que les gens utilisent vraiment — des outils qui rendent la vie quotidienne plus simple, plus juste et mieux connectée à travers toute l'Afrique."
+    >We build software people actually use — tools that make daily life simpler, fairer, and more connected across every corner of Africa.</p>
 
     <div class="hero-cta">
       <a href="#products" class="btn-gold"  data-en="Explore Our Work"  data-fr="Découvrir Nos Projets">Explore Our Work</a>
@@ -1592,8 +1597,8 @@ footer{
       <div class="reveal">
         <div class="contact-card">
           <div class="contact-card-bar"></div>
-          <svg class="africa-contact" aria-hidden="true" viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-            <path d="M 72,26 C 104,14 134,9 164,12 C 188,14 210,20 226,28 C 238,35 244,50 246,66 C 248,84 250,102 255,118 C 259,130 262,140 258,151 C 253,163 240,174 226,188 C 209,204 190,220 168,238 C 145,257 120,278 106,300 C 99,312 100,328 108,338 C 101,334 84,322 66,305 C 47,286 36,262 27,237 C 18,210 17,182 20,155 C 23,128 32,103 34,78 L 22,61 C 28,45 44,30 60,22 C 64,20 68,22 72,26 Z"/>
+          <svg class="africa-contact" aria-hidden="true" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path d="M 90,40 C 130,26 170,20 205,22 C 245,24 270,30 288,40 C 300,50 305,66 308,84 C 311,102 315,120 322,138 C 327,150 329,162 325,173 C 319,186 306,198 288,214 C 268,232 244,252 218,274 C 190,298 162,326 148,358 C 142,378 145,400 155,413 C 144,406 128,390 110,368 C 88,342 72,313 60,282 C 48,250 48,218 52,188 C 56,158 66,134 66,108 C 66,82 70,60 80,46 C 84,40 87,38 90,40 Z"/>
           </svg>
           <div class="contact-city" data-en="Africa" data-fr="Afrique">Africa</div>
           <div class="contact-region" data-en="54 Nations · 1.4 Billion People" data-fr="54 Nations · 1,4 Milliard de Personnes">54 Nations · 1.4 Billion People</div>
